@@ -6,6 +6,12 @@
 <title>アニメランキングTOP100</title>
 <!--ここでCSSを読み込む-->
 <link rel="stylesheet" href="../css/anime.css">
+<style>
+    /*1ページ目（１位から始める）*/
+    ol#anime-list {
+        counter-reset: anime-counter 0; /*カウンターを０にリセット*/
+    }
+</style>
 </head>
 <body>
     <div clsss="center-box">

@@ -28,7 +28,7 @@ h1 {
 }
 /* ol要素（アニメリスト）にFlexboxを適用し、子要素（li）を中央揃え */
 ol#anime-list {
-    counter-reset: anime-counter;/* CSSカウンタをリセット (名前は任意) */
+    /*counter-reset: anime-counter 10;/* CSSカウンタをリセット (名前は任意) */
     list-style: none; /* リストの黒点を消す場合 */
     padding: 0; /* デフォルトのパディングをリセット */
     margin: 0; /* デフォルトのマージンを削除 */
@@ -41,7 +41,7 @@ ol#anime-list {
 
 /* 各li要素にFlexboxを適用し、画像とテキストを中央揃え */
 ol#anime-list li {
-  counter-increment: anime-counter; /* 各liでカウンタを+1 */
+    counter-increment: anime-counter; /* 各liでカウンタを+1 */
 
     width: 180px;/* アイテムの幅 (gapを考慮して調整) */
     padding: 15px;
