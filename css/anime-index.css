@@ -1,0 +1,151 @@
+body {
+    background-image: url('../image3/草原.webp');
+    background-size: cover; /* 画面いっぱいに表示 */
+    background-position: center center; /* 中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景は固定 */
+    min-height: 100vh; /* 最低限の高さ確保 */
+    margin: 0;
+    font-family: sans-serif; /* 適当なフォント */
+    color: #333; /* デフォルトの文字色 */
+}
+
+/* 必要に応じてオーバーレイ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明の白 */
+    z-index: -1;
+}
+.audio-control {
+    position: fixed; /* 画面に固定 */
+    top: 20px; /* 上から20px */
+    right: 20px; /* 右から20px */
+    z-index: 100; /* 他の要素より手前に表示 */
+}
+
+.audio-control button {
+    background-color: rgba(0, 0, 0, 0.7); /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.audio-control button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* audioタグ自体は通常表示させないので、非表示にするか、スタイルで隠す */
+#site-bgm {
+    display: none; /* オーディオプレイヤー自体を非表示にする */
+}
+    /* index.html専用のスタイルがあればここに書く */
+        .index-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh; /* 画面中央に配置するため */
+            text-align: center;
+        }
+        .index-container h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333; /* 任意の色 */
+        }
+        .index-container p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #555; /* 任意の色 */
+        }
+        .start-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #337ab7; /* 任意の色 */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease;
+        }
+        .start-button:hover {
+            background-color: #286090; /* ホバー時の色 */
+        }
+
+        
+        /* ★ここからキャラクターアニメーションのCSSを追加！ */
+
+.character {
+    position: fixed; /* 画面に固定して、スクロールに影響されず動かす */
+    opacity: 0;      /* 最初は透明で見えない状態 */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* 動きの速さと滑らかさ */
+    z-index: 50;     /* コンテンツやBGMボタンより手前に表示 */
+    pointer-events: none; /* キャラクターをクリック不能にする（下の要素にクリックが透過する） */
+    max-width: 20%; /* 画面幅に合わせてキャラクターのサイズを調整 */
+    height: auto;
+}
+
+/* 左から出てくるキャラクターの初期位置 */
+.char-left {
+    left: -20%;      /* 画面の左外に配置（max-widthより少し多め） */
+    top: 40%;        /* 画面の高さの40%の位置 */
+    transform: translateX(0); /* アニメーション初期値 */
+}
+
+/* 左から出てくるキャラクターのアニメーション後の位置 */
+.char-left.is-visible {
+    opacity: 1;             /* 見えるようにする */
+    transform: translateX(25%); /* 画面内（左から25%の位置）にスライド */
+}
+
+/* 上から覗き込むキャラクターの初期位置 */
+.char-top {
+    top: -20%;       /* 画面の上外に配置（max-heightより少し多め） */
+    left: 60%;       /* 画面の幅の60%の位置 */
+    transform: translateY(0); /* アニメーション初期値 */
+}
+
+/* 上から覗き込むキャラクターのアニメーション後の位置 */
+.char-top.is-visible {
+    opacity: 1;             /* 見えるようにする */
+    transform: translateY(25%); /* 画面内（上から25%の位置）にスライド */
+}
+
+/* 右から出てくるキャラクターの初期位置 */
+.char-right {
+    right: -20%;     /* 画面の右外に配置 */
+    bottom: 10%;     /* 画面の下から10%の位置 */
+    transform: translateX(0); /* アニメーション初期値 */
+}
+
+/* 右から出てくるキャラクターのアニメーション後の位置 */
+.char-right.is-visible {
+    opacity: 1;             /* 見えるようにする */
+    transform: translateX(-25%); /* 画面内（右から25%の位置）にスライド */
+}
+
+/* ページに十分なスクロール量を持たせるためのダミー要素（必要であれば） */
+/* bodyのmin-height: 100vh; でも足りない場合 */
+.dummy-space {
+    height: 150vh; /* 画面の150%分の高さを追加して、スクロールを発生させる */
+}
+
+/* 既存のcontainerやstart-buttonなどのスタイルもここに記述 */
+/* index-container のスタイル */
+.index-container {
+    position: relative; /* z-indexを有効にするため */
+    z-index: 10;        /* オーバーレイより手前に、キャラクターより奥に */
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 100px auto; /* 上下に余白を持たせる */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -4,47 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>アニメランキングTOP100 - トップページ</title>
-<link rel="stylesheet" href="../css/anime.css"><style>
-    /* index.html専用のスタイルがあればここに書く */
-        .index-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh; /* 画面中央に配置するため */
-            text-align: center;
-        }
-        .index-container h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #333; /* 任意の色 */
-        }
-        .index-container p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            color: #555; /* 任意の色 */
-        }
-        .start-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #337ab7; /* 任意の色 */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.5em;
-            transition: background-color 0.3s ease;
-        }
-        .start-button:hover {
-            background-color: #286090; /* ホバー時の色 */
-        }
-    </style>
+<link rel="stylesheet" href="../css/anime-index.css">
 </head>
 <body>
+    <div class="overlay"></div>
+    <div class="audio-control">
+        <audio id="site-bgm" loop>
+            <source src="../music/SUMMER_TRIANGLE.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="bgm-toggle-button">♪ BGM ON/OFF</button>
+    </div>
+
     <div class="index-container">
         <h1>アニメランキングTOP100</h1>
         <p>厳選された人気アニメのランキングを1位から100位までご紹介！<br>あなたのお気に入りを見つけよう！</p>
-        <a href="./anime1.html" class="start-button">ランキングを見る！</a>
+        <a href="./mokuji.html" class="start-button">ランキングを見る！</a>
     </div>
+    <p>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br></p>
+    <img src="../image3/miku.webp" alt="左から出てくるキャラ" class="character char-left">
+    <img src="../image3/nino.webp" alt="上から覗き込むキャラ" class="character char-top">
+    <img src="../image3/yotuba.webp" alt="右から出てくるキャラ" class="character char-right">
+    <script src="../js/aaa.js"></script>
 </body>
 </html>
 </style>
