@@ -1,0 +1,83 @@
+.font {
+    font-family: '游明朝', sans-serif; /*''のなかはフォント指定*/
+}
+
+body {
+    background-color: #F0FFF0;
+}
+
+.big-list li {
+font-size: 2em;
+font-weight: bold;
+background-color: #AEEEEE;
+color: #333333;
+}
+h1 {
+    background-color: #98FB98; /*柏南高校のおすすめ紹介の背景色*/
+    color: #333333;
+}
+
+/*目次の外枠ボックス*/
+.toc {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
+/*目次の見出し*/
+.toc h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #aaa; /*下線でーーーっぽく*/
+    padding-bottom: 5px;
+    color: #333333;
+}
+
+/*ulのスタイル（リスト）*/
+.toc ul {
+    list-style: none; /*デフォの点を消す*/
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+/*各リンク（aタグ）*/
+.toc a {
+    color: #333;            /*青じゃなく普通の文字色*/
+    text-decoration: none;    /*下線を消す*/
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.toc a:hover {
+    background-color: #ddd; /*ホバー時に薄グレーで反応*/
+}
+p {
+    color: #333333;
+}
+
+h3 {
+    color: #333333;
+}
+
+table {
+    color: #333333;
+}
+
+.link1 {
+    color: #4682B4;
+}
+
+.color1 {
+    background-color: #F5F5DC;
+}
+
+.color2 {
+    background-color: #FAEBD7;
+}
+
+.border {
+    color: #D3D3D3;
+}
